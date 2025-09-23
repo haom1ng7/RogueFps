@@ -1,0 +1,26 @@
+# Unreal Engine 项目忽略文件
+
+# 构建 & 临时文件
+Binaries/
+DerivedDataCache/
+Intermediate/
+Saved/
+
+# Visual Studio 文件
+.vs/
+*.VC.db
+*.VC.opendb
+*.sln
+
+# 其他
+*.log
+*.pdb
+*.obj
+*.exe
+*.dll
+*.app
+*.dylib
+*.icns
+
+# 不要把 Engine 文件加进来
+D:/UE_5.6/
