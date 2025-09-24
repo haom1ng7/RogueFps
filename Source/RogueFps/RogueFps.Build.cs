@@ -18,19 +18,14 @@ public class RogueFps : ModuleRules
 			"StateTreeModule",
 			"GameplayStateTreeModule",
 			"UMG",
-			"Slate"
-		});
+			"Slate",
+            "Niagara"
+        });
 
 		PrivateDependencyModuleNames.AddRange(new string[] { });
 
 		PublicIncludePaths.AddRange(new string[] {
 			"RogueFps",
-			"RogueFps/Variant_Horror",
-			"RogueFps/Variant_Horror/UI",
-			"RogueFps/Variant_Shooter",
-			"RogueFps/Variant_Shooter/AI",
-			"RogueFps/Variant_Shooter/UI",
-			"RogueFps/Variant_Shooter/Weapons"
 		});
 
 		// Uncomment if you are using Slate UI

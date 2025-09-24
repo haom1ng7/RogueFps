@@ -2,11 +2,3 @@
 
 
 #include "Weapons/UWeaponConfigDA.h"
-
-UWeaponConfigDA::UWeaponConfigDA()
-{
-}
-
-UWeaponConfigDA::~UWeaponConfigDA()
-{
-}
