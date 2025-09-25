@@ -46,6 +46,7 @@ void AWeaponBase::StartFire()
     }
 }
 
+// 全自动武器在结束开火需调用
 void AWeaponBase::StopFire()
 {
     if (WeaponConfig && WeaponConfig->FireMode == EWeaponFireMode::Auto)
@@ -75,7 +76,7 @@ void AWeaponBase::Fire()
         }
         else
         {
-            // 备用：从 Pawn 的眼睛（AI 可能会用到）
+            // 备用：从 Pawn 的眼睛拿视角（AI 可能会用到）
             OwnerPawn->GetActorEyesViewPoint(EyeLoc, EyeRot);
         }
     }
@@ -101,6 +102,7 @@ void AWeaponBase::Fire()
         AActor* HitActor = Hit.GetActor();
         if (HitActor)
         {
+            // 走ue内设伤害
             UGameplayStatics::ApplyPointDamage(
                 HitActor,
                 WeaponConfig->Damage,
@@ -128,15 +130,17 @@ void AWeaponBase::Fire()
     }
 
     // =======================
-    // 4. 枪口火焰特效
+    // 4. TODO：枪口火焰特效
     // =======================
     USceneComponent* RootComp = GetRootComponent();
     if (RootComp)
     {
+        // 旧Cascade
         if (MuzzleFlash)
         {
             UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, RootComp, MuzzleSocketName);
         }
+        // 新Niagara
         if (MuzzleNiagara)
         {
             UNiagaraFunctionLibrary::SpawnSystemAttached(MuzzleNiagara, RootComp, MuzzleSocketName,
@@ -145,7 +149,7 @@ void AWeaponBase::Fire()
     }
 
     // =======================
-    // 5. 弹壳抛出
+    // 5. TODO：弹壳抛出
     // =======================
     if (RootComp)
     {
@@ -169,7 +173,7 @@ void AWeaponBase::Fire()
     }
 
     // =======================
-    // 7. 动画
+    // 7. TODO：动画 
     // =======================
     if (OwnerPawn)
     {

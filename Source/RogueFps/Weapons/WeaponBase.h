@@ -35,7 +35,7 @@ protected:
     FTimerHandle TimerHandle_AutoFire;
     FTimerHandle TimerHandle_Reload;
 
-    /** 特效与音效 */
+    /** 特效与音效 二选一*/
     UPROPERTY(EditDefaultsOnly, Category = "VFX")
     UParticleSystem* MuzzleFlash; // 旧 Cascade
 
@@ -49,7 +49,7 @@ protected:
     UPROPERTY(EditDefaultsOnly, Category = "Weapon")
     FName MuzzleSocketName = "MuzzleFlashSocket";
 
-    /** 弹壳特效 */
+    /** 弹壳特效 二选一 */
     UPROPERTY(EditDefaultsOnly, Category = "VFX")
     UParticleSystem* ShellEjectFX;
 
